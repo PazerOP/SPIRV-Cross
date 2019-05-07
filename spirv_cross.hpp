@@ -496,6 +496,8 @@ public:
 	// The most common use here is to check if a buffer is readonly or writeonly.
 	Bitset get_buffer_block_flags(uint32_t id) const;
 
+	const SPIRType &expression_type(uint32_t id) const;
+
 protected:
 	const uint32_t *stream(const Instruction &instr) const
 	{
@@ -610,7 +612,6 @@ protected:
 	bool is_matrix(const SPIRType &type) const;
 	bool is_array(const SPIRType &type) const;
 	uint32_t expression_type_id(uint32_t id) const;
-	const SPIRType &expression_type(uint32_t id) const;
 	bool expression_is_lvalue(uint32_t id) const;
 	bool variable_storage_is_aliased(const SPIRVariable &var);
 	SPIRVariable *maybe_get_backing_variable(uint32_t chain);
